@@ -1,0 +1,76 @@
+<!-- -->
+      <nav class="{{active}}" ng-click="$prevent.Default()">
+        <a href="#/Dealership" class="button radius" style="float: left;">Back</a>
+            <!-- When a link in the menu is clicked, we set the active variable -->
+            <a href="#" class="button radius" ng-click="logout()" style="float: right;">Log Out</a>
+            <div style="clear: both;"></div>
+        </nav>
+
+
+
+<div id="ActionPlan" class="row" style="background-color: white;">
+  <div class="large-9 columns">
+    <div class="row" style="margin-top: 20px;">
+      <div class="large-4 columns">
+        <h5 style="color: #4d4d4d">Completed</h5>
+        <ul>
+          <li ng-repeat="action in dealership.ActionPlans.Completed">
+            <a href="#/ActionPlan/{{action.id}}" class="button radius success">{{action.Name}} {{action.Date}}</a>
+          </li>
+        </ul>
+      </div>
+      <div class="large-4 columns">
+        <h5 style="color: #4d4d4d">Active</h5>
+        <ul>
+          <li ng-repeat="action in dealership.ActionPlans.Active">
+            <a href="#/ActionPlan/{{action.id}}" class="button radius alert">{{action.Name}} {{action.Date}}</a>
+          </li>
+        </ul>
+      </div>
+      <div class="large-4 columns">
+        <h5 style="color: #4d4d4d">Upcoming</h5>
+        <ul>
+          <li ng-repeat="action in dealership.ActionPlans.Upcoming">
+            <a href="#/ActionPlan/{{action.id}}" class="button radius secondary">{{action.Name}} {{action.Date}}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="large-3 columns">
+    <div class="row">
+      <div class="large-12 columns">
+        <h3><label id="DealershipId">{{dealership.Name}}</label></h3>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="large-12 columns">
+        <img src="Caliway.png" style="width: 120px;">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="large-12 columns">
+        <label id="Location">Location: {{dealership.Address}}</label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div id="Phone" class="large-12 columns">
+        <label>Phone Number: {{dealership.PhoneNum}}</label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div id="Contact" class="large-12 columns">
+        <label>Contact: {{dealership.Contact}}</label>
+      </div>
+    </div>
+
+    <div class="row" style="margin-top: 10px">
+      <a href="#/ActionPlan/new/{{dealership.id}}" class="button radius">Add New Action Plan</a>
+    </div>
+  </div>
+</div>

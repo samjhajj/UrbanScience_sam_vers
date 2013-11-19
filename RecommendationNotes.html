@@ -1,0 +1,58 @@
+<style>
+label.atmosphere {
+  display: inline-block;
+}
+label.atmosphere input[type="radio"] {
+  display: none;
+}
+</style>
+<!--       <nav class="{{active}}" ng-click="$prevent.Default()">
+            <a href="#/Recommendation/{{recommendation.id}}" class="button radius" style="float: left;">Back</a>
+            When a link in the menu is clicked, we set the active variable
+            <a href="#" class="button radius" ng-click="logout()" style="float: right;">Log Out</a>
+            <div style="clear: both;"></div>
+        </nav> -->
+
+<div id="Recommendation" class="row" style="background-color: white;">
+    <form>
+  <fieldset>
+    <legend>Recommendations</legend>
+
+    <div class="row">
+      <div class="large-4 columns">
+        <!-- <label for="ReceptionDropDown"> Client Reception for Recommendation: </label> -->
+        <!-- <select id="ReceptionDropDown" ng-model="recommendation.Reception">
+          <option value="" disabled>Select an option</option>
+          <option value="Positive">Positive</option>
+          <option value="Neutral">Neutral</option>
+          <option value="Negative">Negative</option>
+        </select> -->
+        <label class="atmosphere"><input type="radio" ng-model="recommendation.Reception" value="Positive" name="atmosphere"><img src="app/img/positive.png"></label>
+        <label class="atmosphere"><input type="radio" ng-model="recommendation.Reception" value="Neutral" name="atmosphere"><img src="app/img/neutral.png"></label>
+        <label class="atmosphere"><input type="radio" ng-model="recommendation.Reception" value="Negative" name="atmosphere"><img src="app/img/negative.png"></label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="large-4 columns">
+        <label id="KPIName">Recommendation Description</label>
+        <input type="text" ng-model="recommendation.Name" placeholder="Description">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="large-12 columns">
+        <label>Additional Notes: </label>
+        <textarea id="AdditionalKPINotes" ng-model="recommendation.Notes" placeholder="Notes" style="height: 100px;"></textarea>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="large-12 columns">
+        <button type="button" class="button radius" ng-click="update(recommendation)">Save</button>
+      </div>
+    </div>
+
+  </fieldset>
+</form>
+</div>

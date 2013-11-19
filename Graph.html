@@ -1,0 +1,31 @@
+      <nav class="{{active}}" ng-click="$prevent.Default()">
+            <!-- When a link in the menu is clicked, we set the active variable -->
+            <button class="button" ng-click="logout()">Log Out</button>
+            <a href="./index.html#/Dealership" class="Dealership button" ng-click="active='Dealership'">Dealerships</a>
+            <a href="./index.html#/ActionPlan" class="ActionPlan button" ng-click="active='ActionPlan'">Action Plans</a>
+            <a href="./index.html#/Recommendation" class="Recommendation button" ng-click="active='Recommendation'">Recommendations</a>
+            <a href="./index.html#/Table" class="Table button" ng-click="active='Table'">Table</a>
+        </nav>
+
+
+<div id="graph" class="row">
+	<div id="chartcontainer" style="display: table; margin: 0 auto;">This is just a replacement in case JavaScript is not available or used for SEO Purposes</div>
+
+			<script type="text/javascript">
+				var myData = new Array([10, 20], [15, 10], [20, 30], [25, 10], [30, 5]);
+				var myData2 = new Array([10, 10], [15, 5], [25, 25], [30, 20]);
+				var myChart = new JSChart('chartcontainer', 'line');
+				myChart.setDataArray(myData, 'line_1');
+				myChart.setDataArray(myData2, 'line_2');
+				myChart.setLineWidth(5, 'line_1');
+				myChart.setLineColor('#0717F7', 'line_1');
+				myChart.setLineWidth(5, 'line_2');
+				myChart.setLineColor('#F70707', 'line_2');
+				myChart.setTitle('KPI');
+				myChart.setTitleColor('#000000');
+				myChart.setTitleFontSize(16);
+				myChart.setBackgroundColor('#efe');
+				myChart.setSize(900, 600);
+				myChart.draw();
+			</script>	
+</div>

@@ -1,0 +1,61 @@
+      <nav class="{{active}}" ng-click="$prevent.Default()">
+            <a href="#/DealershipDetails/{{action.DealershipId}}" class="button radius" style="float: left;">Back</a>
+            <!-- When a link in the menu is clicked, we set the active variable -->
+            <a class="button radius" href="#" ng-click="logout()" style="float: right;">Log Out</a>
+            <div style="clear: both;"></div>
+        </nav>
+
+<div id="ActionPlan" class="row" style="background-color: white;">
+  <button type="button" onclick="window.open('#/ActionPlan/{{action.id}}/Notes', 'Action Plan Notes', 'width=1100,height=640'); return false;" class="button radius" ng-disabled="isNew(action)" style="margin-right: 10px; float: right; margin-top: 10px;">Notes</button>
+  <h2 style="color: #4d4d4d">{{action.Date}}</h2>
+
+  <div class="large-6 columns">
+    <ul style="margin-top: 15px;">
+      <li ng-repeat="recommendation in action.Recommendations">
+        <button class="button radius" data-dropdown="recommendation-{{recommendation.id}}">{{recommendation.Name}}</button>
+        <div id="recommendation-{{recommendation.id}}" class="f-dropdown content" data-dropdown-content>
+          <p>{{recommendation.Name}}</p>
+          <p>Client Reception: {{recommendation.Reception}}</p>
+          <p>{{recommendation.Notes}}</p>
+          <a href="#/Recommendation/{{recommendation.id}}" class="button radius">View</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="large-6 columns">
+    <div class="row">
+      <label>Action Plan Title:</label>
+      <input type="text" placeholder="Action Plan Title" ng-model="action.Name">
+    </div>
+    <!-- <div class="row">
+      <label>Date:</label>
+      <input type="text" ng-model="action.Date" data-date-format="mm/dd/yyyy" id="date">
+    </div> -->
+    <div class="row">
+      <label>Status:</label>
+      <div style="text-align: left" class="large-6">
+        <label><input type="radio" ng-model="action.Status" value="Completed"> Completed</label>
+        <label><input type="radio" ng-model="action.Status" value="Active"> Active</label>
+        <label><input type="radio" ng-model="action.Status" value="Upcoming"> Upcoming</label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="large-12 columns">
+        <button type="button" class="button radius" ng-click="update(action)">Save</button>
+      </div>
+    </div>
+
+    <div class="row" style="margin-top: 10px;">
+      <div class="large-12 columns">
+        <a onclick="window.open('#/Recommendation/new/{{action.id}}', 'Create Recommendation', 'width=1100,height=640'); return false;" href="#" class="button radius">Create Recommendation</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+$("#date").fdatepicker();
+$(document).foundation();
+</script>

@@ -1,0 +1,17 @@
+      <nav class="{{active}}" ng-click="$prevent.Default()" style="padding: 15px">
+            <a class="button radius" href="#/Dealership/Find" style="float: left;">Back</a>
+            <!-- When a link in the menu is clicked, we set the active variable -->
+            <a href="#" class="button radius" ng-click="logout()" style="float: right;">Log Out</a>
+            <div style="clear: both;"></div>
+        </nav>
+
+<div id="Recommendation" class="row" style="background-color: white;">
+    <ul style="text-align: center; margin-bottom: 0">
+      <li ng-repeat="dealership in dealerships">
+        <a href="#/DealershipDetails/{{dealership.id}}" class="button">
+          <img src="Caliway.png" style="width: 100px; display: block;">
+          {{dealership.Name}}
+        </a>
+      </li>
+    </ul>
+</div>

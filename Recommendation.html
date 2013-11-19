@@ -1,0 +1,89 @@
+      <nav class="{{active}}" ng-click="$prevent.Default()">
+            <a href="#/ActionPlan/{{action.id}}" class="button radius" style="float: left;">Back</a>
+            <!-- When a link in the menu is clicked, we set the active variable -->
+            <a href="#" class="button radius" ng-click="logout()" style="float: right;">Log Out</a>
+            <a href="#" onclick="window.open('#/Recommendation/{{recommendation.id}}/Notes', 'Recommendation Notes', 'width=1100,height=640'); return false;" class="button radius" target="_blank">Notes</a>
+            <div style="clear: both;"></div>
+        </nav>
+
+<div class="row">
+  <div class="large-12 columns" style="padding: 5px; background-color: white;">
+    <p>Recommendation Description: {{recommendation.Name}}</p>
+  </div>
+</div>
+
+<div class="row" style="margin-top: 20px;">
+  <div class="large-6 columns" id="graph" style="background-color: #efe">
+    <div id="chartcontainer" style="display: table; margin: 0 auto;">This is just a replacement in case JavaScript is not available or used for SEO Purposes</div>
+  </div>
+  <div id="table" class="large-6 columns" style="background-color: white; height: 319px;">
+  <table id="tempTable" class="display">
+    <thead>
+          <tr>
+              <th>Sales</th>
+              <th>Revenue</th>
+              <th>Profits</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <td>12</td>
+              <td>210,000</td>
+              <td>45,000</td>
+          </tr>
+          <tr>
+              <td>13</td>
+              <td>270,000</td>
+              <td>57,000</td>
+          </tr>
+          <tr>
+              <td>5</td>
+              <td>200,000</td>
+              <td>42,000</td>
+          </tr>
+          <tr>
+              <td>7</td>
+              <td>200,500</td>
+              <td>30,000</td>
+          </tr>
+          <tr>
+              <td>16</td>
+              <td>310,000</td>
+              <td>70,000</td>
+          </tr>
+          <tr>
+              <td>2</td>
+              <td>60,000</td>
+              <td>8,000</td>
+          </tr>
+          <tr>
+              <td>9</td>
+              <td>170,000</td>
+              <td>25,000</td>
+          </tr>
+      </tbody>
+  </table>
+  </div>
+</div>
+
+<script type="text/javascript">
+  var myData = new Array([10, 20], [15, 10], [20, 30], [25, 10], [30, 5]);
+  var myData2 = new Array([10, 10], [15, 5], [25, 25], [30, 20]);
+  var myChart = new JSChart('chartcontainer', 'line');
+  myChart.setDataArray(myData, 'line_1');
+  myChart.setDataArray(myData2, 'line_2');
+  myChart.setLineWidth(5, 'line_1');
+  myChart.setLineColor('#0717F7', 'line_1');
+  myChart.setLineWidth(5, 'line_2');
+  myChart.setLineColor('#F70707', 'line_2');
+  myChart.setTitle('KPI');
+  myChart.setTitleColor('#000000');
+  myChart.setTitleFontSize(16);
+  myChart.setBackgroundColor('#efe');
+  // myChart.setSize(900, 600);
+  myChart.draw();
+</script> 
+
+<script type="text/javascript">
+      $('#tempTable').dataTable();
+</script>

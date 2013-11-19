@@ -1,0 +1,63 @@
+      <nav class="{{active}}" ng-click="$prevent.Default()">
+            <!-- When a link in the menu is clicked, we set the active variable -->
+            <button class="button" ng-click="logout()">Log Out</button>
+            <a href="./index.html#/Dealership" class="Dealership button" ng-click="active='Dealership'">Dealerships</a>
+            <a href="./index.html#/ActionPlan" class="ActionPlan button" ng-click="active='ActionPlan'">Action Plans</a>
+            <a href="./index.html#/Recommendation" class="Recommendation button" ng-click="active='Recommendation'">Recommendations</a>
+            <a href="./index.html#/Graph" class="Graph button" ng-click="active='Graph'">Graph</a>
+        </nav>
+
+<script type="text/javascript">
+	$(document).ready( function () {
+   		$('#tempTable').dataTable();
+	} );
+</script>
+
+<div id="table" class="row" style="background-color: white;">
+	<table id="tempTable" class="display">
+		<thead>
+        	<tr>
+            	<th>Sales</th>
+            	<th>Revenue</th>
+            	<th>Profits</th>
+        	</tr>
+    	</thead>
+    	<tbody>
+        	<tr>
+            	<td>12</td>
+            	<td>210,000</td>
+            	<td>45,000</td>
+        	</tr>
+        	<tr>
+            	<td>13</td>
+            	<td>270,000</td>
+            	<td>57,000</td>
+        	</tr>
+        	<tr>
+            	<td>5</td>
+            	<td>200,000</td>
+            	<td>42,000</td>
+        	</tr>
+        	<tr>
+            	<td>7</td>
+            	<td>200,500</td>
+            	<td>30,000</td>
+        	</tr>
+        	<tr>
+            	<td>16</td>
+            	<td>310,000</td>
+            	<td>70,000</td>
+        	</tr>
+        	<tr>
+            	<td>2</td>
+            	<td>60,000</td>
+            	<td>8,000</td>
+        	</tr>
+        	<tr>
+            	<td>9</td>
+            	<td>170,000</td>
+            	<td>25,000</td>
+        	</tr>
+    	</tbody>
+	</table>
+</div>

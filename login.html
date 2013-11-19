@@ -1,0 +1,42 @@
+<div id="login" class="row">
+	<div class="large-6 large-offset-3">
+		<form ng-submit="login()" class="login">
+			<div class="row">
+				<div class="large-12">
+					<div class="row">
+						<div class="small-3 columns">
+							<label for="username" class="right inline">Username</label>
+						</div>
+						<div class="small-7 columns">
+							<input type="text" name="username" placeholder="Username" id="username" ng-model="credentials.username" required/>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row" style="margin-top: 10px;">
+				<div class="large-12">
+					<div class="row">
+						<div class="small-3 columns">
+							<label for="password" class="right inline">Password</label>
+						</div>
+						<div class="small-7 columns">
+							<input type="password" name="password" placeholder="Password" id="password" ng-model="credentials.password" required/>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row" style="margin-top: 10px;">
+				<div class="large-12 columns">
+					<div class="row">
+						<div class="small-4 columns" style="padding-top: 15px;">
+							<label><input type="checkbox"> Remember Me</label>
+						</div>
+						<div class="small-7 columns">
+							<button type="submit" class="button expand radius">LogIn</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>

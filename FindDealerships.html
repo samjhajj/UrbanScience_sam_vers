@@ -1,0 +1,29 @@
+<nav class="{{active}}" ng-click="$prevent.Default()" style="padding: 15px">
+    <!-- When a link in the menu is clicked, we set the active variable -->
+    <a href="#" class="button radius" ng-click="logout()" style="float: right;">Log Out</a>
+    <div style="clear: both;"></div>
+</nav>
+
+<div id="FindDealership" class="row" style="background-color: white;">
+    <h3>Find/Select/Import Dealership</h3>
+    <div class="row">
+        <div class="large-12 columns">
+            <label>Enter a word or two in the company name:</label>
+            <input type="text" placeholder="Search" ng-model="searchString">
+        </div>
+    </div>
+    <div class="large-12">
+        <table style="width: 100%">
+            <tr ng-repeat="i in dealerships | searchFor:searchString">
+                <td>{{i.Name}}</td>
+                <td style="width: 20%"><a href="#" class="button small radius">Import</a></td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<div class="row" style="margin-top: 15px;">
+    <div class="large-12 columns" style="text-align: center;">
+        <a href="#/Dealership" class="button radius large-3">Dealerships List</a>
+    </div>
+</div>

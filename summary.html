@@ -1,0 +1,247 @@
+<nav class="{{active}}" ng-click="$prevent.Default()">
+        <!-- When a link in the menu is clicked, we set the active variable -->
+
+        <a href="./Login.html" class="selected" ng-class="active">Login</a>
+        <a href="./Dealerships.html" class="Dealership" ng-click="active='Dealership'">Dealerships</a>
+        <a href="./ActionPlan.html" class="ActionPlan" ng-click="active='ActionPlan'">Action Plans</a>
+        <a href="./Recommendation.html" class="Recommendation" ng-click="active='Recommendation'">Recommendations</a>
+        <a href="./Graph.html" class="Graph" ng-click="active='Graph'">Graph</a>
+        <a href="./Table.html" class="Table" ng-click="active='Table'">Table</a>
+      </nav>
+
+<div id="graph" class="row">
+	<div id="chartcontainer" style="display: table; margin: 0 auto;">This is just a replacement in case JavaScript is not available or used for SEO Purposes</div>
+
+			<script type="text/javascript">
+				var myData = new Array([10, 20], [15, 10], [20, 30], [25, 10], [30, 5]);
+				var myData2 = new Array([10, 10], [15, 5], [25, 25], [30, 20]);
+				var myChart = new JSChart('chartcontainer', 'line');
+				myChart.setDataArray(myData, 'line_1');
+				myChart.setDataArray(myData2, 'line_2');
+				myChart.setLineWidth(5, 'line_1');
+				myChart.setLineColor('#0717F7', 'line_1');
+				myChart.setLineWidth(5, 'line_2');
+				myChart.setLineColor('#F70707', 'line_2');
+				myChart.setTitle('KPI');
+				myChart.setTitleColor('#000000');
+				myChart.setTitleFontSize(16);
+				myChart.setBackgroundColor('#efe');
+				myChart.setSize(900, 600);
+				myChart.draw();
+			</script>	
+</div>
+
+<script type="text/javascript">
+	$(document).ready( function () {
+   		$('#tempTable').dataTable();
+	} );
+</script>
+
+<div id="table" class="row" style="background-color: white;">
+	<table id="tempTable" class="display">
+		<thead>
+        	<tr>
+            	<th>Sales</th>
+            	<th>Revenue</th>
+            	<th>Profits</th>
+        	</tr>
+    	</thead>
+    	<tbody>
+        	<tr>
+            	<td>12</td>
+            	<td>210,000</td>
+            	<td>45,000</td>
+        	</tr>
+        	<tr>
+            	<td>13</td>
+            	<td>270,000</td>
+            	<td>57,000</td>
+        	</tr>
+        	<tr>
+            	<td>5</td>
+            	<td>200,000</td>
+            	<td>42,000</td>
+        	</tr>
+        	<tr>
+            	<td>7</td>
+            	<td>200,500</td>
+            	<td>30,000</td>
+        	</tr>
+        	<tr>
+            	<td>16</td>
+            	<td>310,000</td>
+            	<td>70,000</td>
+        	</tr>
+        	<tr>
+            	<td>2</td>
+            	<td>60,000</td>
+            	<td>8,000</td>
+        	</tr>
+        	<tr>
+            	<td>9</td>
+            	<td>170,000</td>
+            	<td>25,000</td>
+        	</tr>
+    	</tbody>
+	</table>
+</div>
+
+<div id="ActionPlan" class="row" style="background-color: white;">
+	<form>
+  <fieldset>
+    <legend>Action Plan</legend>
+
+    <div class="large-4 columns">
+    	<select id="customDropdown">
+    		<option>This is a dropdown</option>
+    		<option>This is another dropdown</option>
+    		<option>This is another dropdown too</option>
+    		<option>Look, a fourth option</option>
+  		</select>
+  	</div>
+
+  	<div class="large-4 columns">
+    	<label for="checkbox1">
+    		<input type="checkbox" id="checkbox1" style="">
+    		<span class="custom checkbox"></span> Checkbox
+  		</label>
+  	</div>
+
+
+    <div class="row">
+      <div class="large-12 columns">
+        <label>Input Label</label>
+        <input type="text" placeholder="large-12.columns">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="large-4 columns">
+        <label>Input Label</label>
+        <input type="text" placeholder="large-4.columns">
+      </div>
+      <div class="large-4 columns">
+        <label>Input Label</label>
+        <input type="text" placeholder="large-4.columns">
+      </div>
+      <div class="large-4 columns">
+        <div class="row collapse">
+          <label>Input Label</label>
+          <div class="small-9 columns">
+            <input type="text" placeholder="small-9.columns">
+          </div>
+          <div class="small-3 columns">
+            <span class="postfix">.com</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="large-12 columns">
+        <label>Textarea Label</label>
+        <textarea placeholder="Notes"></textarea>
+      </div>
+    </div>
+
+  </fieldset>
+</form>
+</div>
+
+<div id="Recommendation" class="row" style="background-color: white;">
+	<form>
+  <fieldset>
+    <legend>Recommendations</legend>
+
+    <div class="large-4 columns">
+    	<select id="customDropdown">
+    		<option>This is a dropdown</option>
+    		<option>This is another dropdown</option>
+    		<option>This is another dropdown too</option>
+    		<option>Look, a fourth option</option>
+  		</select>
+  	</div>
+
+  	<div class="large-4 columns">
+    	<label for="checkbox1">
+    		<input type="checkbox" id="checkbox1" style="">
+    		<span class="custom checkbox"></span> Checkbox
+  		</label>
+  	</div>
+
+    <div class="row">
+      <div class="large-12 columns">
+        <label>Input Label</label>
+        <input type="text" placeholder="large-12.columns">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="large-4 columns">
+        <label>Input Label</label>
+        <input type="text" placeholder="large-4.columns">
+      </div>
+      <div class="large-4 columns">
+        <label>Input Label</label>
+        <input type="text" placeholder="large-4.columns">
+      </div>
+      <div class="large-4 columns">
+        <div class="row collapse">
+          <label>Input Label</label>
+          <div class="small-9 columns">
+            <input type="text" placeholder="small-9.columns">
+          </div>
+          <div class="small-3 columns">
+            <span class="postfix">.com</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="large-12 columns">
+        <label>Textarea Label</label>
+        <textarea placeholder="Notes"></textarea>
+      </div>
+    </div>
+
+  </fieldset>
+</form>
+</div>
+
+<div class="row">
+	<div class="large-12 columns">
+		<button class="button large expand radius" ng-click="logout()">Log Out</button>
+	</div>
+</div>
+
+<div>
+    <div class="tabbable tabs-left">
+      <ul class="nav nav-tabs">
+        <li ng-class="{active: main.active.tab == 'info' }">
+          <a ng-click='main.active.tab = "info"'>Settings</a>
+        </li>
+
+        <li ng-class="{active: main.active.tab == 'categories' }">
+          <a ng-click='main.active.tab = "categories"'>Categories</a>
+        </li>
+
+        <li ng-class="{active: main.active.tab == 'pages' }">
+          <a ng-click='main.active.tab = "pages"'>Pages</a>
+        </li>
+
+        <li ng-class="{active: main.active.tab == 'recommendation' }">
+          <a ng-click='main.active.tab = "recommendation"'>Recommendation</a>
+        </li>
+      </ul>
+
+      <div class="tab-content">
+        <div ng-switch='main.active.tab'>
+          <div ng-switch-when='info' ng-include='"/graph.html"'></div>
+          <div ng-switch-when='categories' ng-include='"/table.html"'></div>
+          <div ng-switch-when='pages' ng-include='"/actionplan.html"'></div>
+          <div ng-switch-when='pages' ng-include='"/recommendation.html"'></div>
+      </div>
+    </div>
+  </div>
+</div>
